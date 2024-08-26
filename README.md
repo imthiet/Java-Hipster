@@ -6,12 +6,10 @@
 
 
 - [JHipster](#jhipster)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
+- [Technology stack của JHipster](#features)
 
-## JHipster
+
+## jhipster
 ...
 
 ## Features
