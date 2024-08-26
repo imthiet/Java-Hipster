@@ -12,7 +12,7 @@
 ## jhipster
 ...
 
-## Features
+
 ...
 
 ## Installation
@@ -23,4 +23,4 @@
 
 ## License
 ...
-
+## Features
