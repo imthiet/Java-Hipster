@@ -11,7 +11,7 @@
 - [Usage](#usage)
 - [License](#license)
 
-## jhipster
+## JHipster
 ...
 
 ## Features
