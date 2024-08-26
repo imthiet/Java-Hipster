@@ -1,21 +1,17 @@
-# Java-Hipster
 
-
-# Index
+# Index of JHipster
 
 ## 1.Tổng Quan Về JHipster
 
-# Project Title
 
-## Table of Contents
 
-- [Introduction](#introduction)
+- [JHipster](#jhipster)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 
-## Introduction
+## jhipster
 ...
 
 ## Features
