@@ -9,7 +9,8 @@
 - [Technology stack của JHipster](#technology-stack)
 
 ### 2.Cài Đặt Môi Trường
-- [Cài Đặt JHipster](#jhipster-installation)
+- [2.1. Cài Đặt JHipster](#2.1-jhipster-installation)
+- [2.2. Cấu Hình Proxy](#2.2-configuring-proxy)
 
 
 
@@ -73,7 +74,7 @@ Hệ công nghệ cho microservices:
 
 
 # 2. Cài Đặt Môi Trường
-### JHipster Installation
+### 2.1 JHipster Installation
 Có tới 4 cách để làm việc với JHipster.
 
 **JHipster Online:**
@@ -183,3 +184,5 @@ Trong trường hợp bạn muốn đăng nhập với "root":
 - Xây dựng một image Docker với Docker daemon (Maven goal: `jib:dockerBuild` hoặc Gradle task: `jibDockerBuild`).
 
 Tuy nhiên, bạn có thể sử dụng chế độ không cần daemon của Jib, chế độ này có thể xây dựng một image Docker và đẩy nó lên một registry mà không cần truy cập vào Docker daemon (Maven goal: `jib:build` hoặc Gradle task: `jibBuild`). Nhưng bạn sẽ cần thiết lập thông tin đăng nhập vào Docker registry như một yêu cầu trước khi xây dựng ứng dụng. Xem tài liệu cấu hình của plugin Jib để biết thêm chi tiết.
+
+### 2.2 Proxy configuring
