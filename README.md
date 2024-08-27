@@ -7,8 +7,9 @@
 
 - [JHipster](#jhipster)
 - [Technology stack của JHipster](#technology-stack)
-- [Test](#test)
 
+### 2.Cài Đặt Môi Trường
+- [Cài Đặt JHipster](#jhipster-installation)
 
 
 
@@ -71,4 +72,114 @@ Hệ công nghệ cho microservices:
 
 
 
-### Test
+# 2. Cài Đặt Môi Trường
+### JHipster Installation
+Có tới 4 cách để làm việc với JHipster.
+
+**JHipster Online:**
+
+ Cho phép tạo ra 1 ứng dụng JHipster mà không cần cài đặt JHipster. Được khuyến nghị cho người dùng mới hoặc người muốn có cái nhìn tổng quát về JHipster. Sau khi thiết lập cấu hình, có thể tải xuống ứng dụng dưới dạng file zip tương tự như spring initializr. Tuy nhiên phương thức này có những hạn chế về mặt tính năng cũng như trải nghiệm.
+
+**Cài Đặt Trên Local với NPM:**
+
+Yêu cầu:
+
+ - Java 17 hoặc 21 LTS (Long Term Support)
+ - Nodejs 64bit LTS version (không hỗ trợ phiên bản non-LTS)
+
+Cài Đặt:
+ - Câu lệnh cài đặt:
+            
+                 `npm install -g generator-jhipster`
+ -  Nếu bạn muốn sử dụng một module hoặc một blueprint (chẳng hạn từ JHipster Marketplace), hãy cài đặt Yeoman:
+            
+                         `npm install -g yo`
+
+Tùy chọn cài đặt khác:
+    
+- Java Build Tool: Nếu bạn sử dụng Maven hoặc Gradle, bạn hầu như không cần cài đặt bất cứ thứ gì, cũng như JHipster sẽ tự động cài đặt Maven/Gradle Wrapper cho bạn. Nếu không muốn sử dụng những Wrapper đó, truy cập trang web chính thức Maven hoặc Gradle để cài đặt theo ý mình.
+- Cài đặt Git từ git-scm.com. Nên sử dụng công cụ SourceTree nếu bạn mới làm việc với git. Khi đó JHipster sẽ cố gắng commit dự án của bạn tới git. Ngoài ra *JHipster upgrade sub-generator* cũng yêu cầu Git được cài đặt.
+
+
+**Cài Đặt Với Docker (Khuyến nghị cho chuyên gia):**
+
+**Lưu ý**: Docker image này dùng để chạy JHipster generator bên trong một container. Nó hoàn toàn khác với các cấu hình Docker và Docker Compose mà JHipster sẽ tạo ra, có mục đích là chạy ứng dụng bạn đã tạo bên trong một container.
+
+Thông Tin Chung:
+
+- JHipster có một Dockerfile đặc biệt, nó cung cấp một Docker image.
+- Nó làm cho một Docker "Automated Bulid" khả dụng trên:  https://hub.docker.com/r/jhipster/jhipster/
+- Image này sẽ cho phép bạn chạy JHipster bên trong Docker.
+
+Điều Kiện Tiên Quyết:
+
+
+- (Được khuyến nghị) Docker Destop: cách dễ nhất để tạo, chạy, và kiểm tra 1 ứng dụng được docker hóa. Nó cung cấp giao diện người dùng cho các container/images/vokumes. Docker developer, Kubernetes và nhiều hơn nữa.
+
+- Docker Engine: Ứng dụng client-server với giao diện dòng lệnh 
+
+*Lưu Ý*: Dựa trên hệ điều hành của bạn, DOCKER_HOST sẽ khác nhau.
+
+Sử Dụng Trên Linux/Mac Windows (với Docker)
+
+- Pull the IMAGE
+- Kéo JHipster Docker image mới nhất:
+            
+      `docker image pull jhipster/jhipster:master`
+- Tất cả các Tag ở đây: https://hub.docker.com/r/jhipster/jhipster/tags/
+
+*Cảnh báo*: Nếu bạn đang sử dụng Docker Machine trên Mac hoặc Windows, Docker daemon của bạn chỉ có quyền truy cập hạn chế vào hệ thống tệp của OS X hoặc Windows. Docker Machine cố gắng tự động chia sẻ thư mục `/Users` (trên OS X) hoặc `C:\Users\<username>` (trên Windows). Vì vậy, bạn phải tạo thư mục dự án trong những thư mục này để tránh gặp sự cố khi gắn kết volume.
+
+- Tạo thư mục "jhipster" trong đường dẫn nhà của bạn:
+
+                  `mkdir ~/jhipster`
+
+- Khởi chạy Docker Image : 
+
+    `docker container run --name jhipster -v ~/jhipster:/home/jhipster/app -v ~/.m2:/home/jhipster/.m2 -p 8080:8080 -p 9000:9000 -p 3001:3001 -d -t jhipster/jhipster`
+- Kiểm tra nếu container đang chạy, sử dụng lệnh `docker container ps`
+- Lệnh dừng Docker: `docker container stop jhipter`
+- Khởi chạy lại: `docker container start jhipster`
+- Trong trường hợp cập nhật Docker Imamge, nên xóa những container đang có và chạy lại từ đầu:
+
+    `1.docker container stop jhipster
+
+    2.docker container rm jhipster
+
+    3.docker image pull jhipster/jhipster
+
+    4.docker container run --name jhipster -v ~/jhipster:/home/   jhipster/app -v ~/.m2:/home/jhipster/.m2 -p 8080:8080 -p 9000:9000 -p 3001:3001 -d -t jhipster/jhipster`
+
+TRUY CẬP CONTAINER
+
+Câu lệnh:
+
+           `docker container exec -it <container_name> bash`
+
+Với jhipster:
+
+            `docker container exec -it jhipster bash`
+
+Bạn sẽ đăng nhập như 'jhipster'
+
+Trong trường hợp bạn muốn đăng nhập với "root":
+
+    `docker container exec -it --user root jhipster bash
+
+`
+ỨNG DỤNG ĐẦU TIÊN
+- Có thể truy cập tới /home/jhipster/app ở trong container và bắt đầu xây dựng ứng dụng bên trong Docker:
+
+    `cd /home/jhipster/app`
+- Khi ứng dụng đã được khởi tạo, bạn có thể sử dụng tất cả các lệnh của gulp/bower/maven : `./mvnw`
+
+**HOÀN THÀNH KHỞI CHẠY ỨNG DỤNG JHIPSTER BÊN TRONG DOCKER**
+
+- Truy cập ứng dụng đang chạy: `http://DOCKER_HOST:8080`.
+- Truy cập vào tất cả các file được tạo ra trong thư mục shared.
+**Cảnh báo**: Mặc định, Docker không được cài đặt trong image `jhipster/jhipster`. Do đó, bạn sẽ không thể:
+
+- Sử dụng các file `docker-compose`.
+- Xây dựng một image Docker với Docker daemon (Maven goal: `jib:dockerBuild` hoặc Gradle task: `jibDockerBuild`).
+
+Tuy nhiên, bạn có thể sử dụng chế độ không cần daemon của Jib, chế độ này có thể xây dựng một image Docker và đẩy nó lên một registry mà không cần truy cập vào Docker daemon (Maven goal: `jib:build` hoặc Gradle task: `jibBuild`). Nhưng bạn sẽ cần thiết lập thông tin đăng nhập vào Docker registry như một yêu cầu trước khi xây dựng ứng dụng. Xem tài liệu cấu hình của plugin Jib để biết thêm chi tiết.
