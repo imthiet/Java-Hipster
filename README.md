@@ -186,3 +186,103 @@ Trong trường hợp bạn muốn đăng nhập với "root":
 Tuy nhiên, bạn có thể sử dụng chế độ không cần daemon của Jib, chế độ này có thể xây dựng một image Docker và đẩy nó lên một registry mà không cần truy cập vào Docker daemon (Maven goal: `jib:build` hoặc Gradle task: `jibBuild`). Nhưng bạn sẽ cần thiết lập thông tin đăng nhập vào Docker registry như một yêu cầu trước khi xây dựng ứng dụng. Xem tài liệu cấu hình của plugin Jib để biết thêm chi tiết.
 
 ### 2.2 Configuring Proxy
+
+
+#### Cấu hình Proxy Doanh Nghiệp
+
+Khi JHipster được sử dụng trong một công ty, bạn có thể cần cấu hình tất cả các công cụ để vượt qua proxy doanh nghiệp.
+
+Bạn có thể thử cấu hình các biến môi trường `HTTP_PROXY` và `HTTPS_PROXY` hoặc sử dụng công cụ như Cntlm.
+
+Tuy nhiên, điều này có thể chưa đủ, vì vậy bạn sẽ cần phải cấu hình riêng biệt cho tất cả các công cụ được sử dụng cùng với JHipster.
+
+- Proxy được định hình bởi:
+
+        username - password - host- port
+- Dường dẫn : http://username:password@host:port. Nếu sử dụng Cntlm, config của bạn sẽ là: 127.0.0.1:3128
+
+
+#### Cấu Hình NPM
+- Sử dụng lệnh:
+
+    `npm config set proxy http://username:password@host:port
+    npm config set https-proxy http://username:password@host:port`
+- Hoặc chỉnh sửa trực tiếp đường dẫn ~/.npmrc :
+
+   ` proxy=http://username:password@host:port
+    https-proxy=http://username:password@host:port
+    https_proxy=http://username:password@host:port`
+
+- Cấu Hình NPM:
+
+    `npm config set proxy http://username:password@host:port`
+
+     `npm config set https-proxy http://username:password@host:port`  
+
+- Cấu Hình Git:
+
+    `git config --global http.proxy http://username:password@host:port`
+
+    `git config --global https.proxy http://username:password@host:port`    
+
+- Cấu Hình Maven:
+
+    `<proxies>
+        <proxy>
+        <id>id</id>
+        <active>true</active>
+        <protocol>http</protocol>
+        <username>username</username>
+        <password>password</password>
+        <host>host</host>
+        <port>port</port>
+        <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
+        </proxy>
+    </proxies>`     
+- Maven Wrapper:
+
+    Tạo file mới .mvn/jvm.config trong thư mục dự án và cài đặt cấu hình theo:
+
+        `-Dhttp.proxyHost=host 
+         -Dhttp.proxyPort=port 
+         -Dhttps.proxyHost=host 
+         -Dhttps.proxyPort=port 
+         -Dhttp.proxyUser=username 
+         -Dhttp.proxyPassword=password`
+- Cấu Hình Gradle: 
+
+        `## Proxy setup
+        systemProp.proxySet="true"
+        systemProp.http.keepAlive="true"
+        systemProp.http.proxyHost=host
+        systemProp.http.proxyPort=port
+        systemProp.http.proxyUser=username
+        systemProp.http.proxyPassword=password
+        systemProp.http.nonProxyHosts=local.net|some.host.com
+
+        systemProp.https.keepAlive="true"
+        systemProp.https.proxyHost=host
+        systemProp.https.proxyPort=port
+        systemProp.https.proxyUser=username
+        systemProp.https.proxyPassword=password
+        systemProp.https.nonProxyHosts=local.net|some.host.com
+        ## end of proxy setup`
+- Docker
+Native Docker:
+ Tùy vào hệ điều hành của bạn, sẽ phải chỉnh sửa đường dẫn:
+ 
+  (/etc/sysconfig/docker or /etc/default/docker). 
+
+  Sau đó bạn cần khởi động lại Docker service :
+  
+   `sudo service docker restart`
+- Docker với docker-Machine
+ Khởi tạo Docker-Machine với câu Lệnh:
+
+    `docker-machine create -d virtualbox \
+    --engine-env HTTP_PROXY=http://username:password@host:port \
+    --engine-env HTTPS_PROXY=http://username:password@host:port \
+    default`
+hoặc có thể chỉnh sửa file: *~/.docker/machine/machines/default/config.json.*
+ 
+    
