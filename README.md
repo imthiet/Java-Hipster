@@ -9,8 +9,8 @@
 - [Technology stack của JHipster](#technology-stack)
 
 ### 2.Cài Đặt Môi Trường
-- [2.1. Cài Đặt JHipster](#2.1-jhipster-installation)
-- [2.2. Cấu Hình Proxy](#2.2-configuring-proxy)
+- [2.1 Cài Đặt JHipster](#21-jhipster-installation)
+- [2.2 Cấu Hình Proxy](#22-configuring-proxy)
 
 
 
