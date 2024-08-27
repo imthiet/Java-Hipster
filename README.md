@@ -185,4 +185,4 @@ Trong trường hợp bạn muốn đăng nhập với "root":
 
 Tuy nhiên, bạn có thể sử dụng chế độ không cần daemon của Jib, chế độ này có thể xây dựng một image Docker và đẩy nó lên một registry mà không cần truy cập vào Docker daemon (Maven goal: `jib:build` hoặc Gradle task: `jibBuild`). Nhưng bạn sẽ cần thiết lập thông tin đăng nhập vào Docker registry như một yêu cầu trước khi xây dựng ứng dụng. Xem tài liệu cấu hình của plugin Jib để biết thêm chi tiết.
 
-### 2.2 Proxy configuring
+### 2.2 Configuring Proxy
