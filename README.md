@@ -312,3 +312,14 @@ Một dự án JHipster có thể được phát triển mà không cần bất 
 - Khởi chạy dự án với JHipster:
 ![Description](assert/generateApp.png)
 
+Nếu sử dụng Cassandra chạy lệnh : 
+
+`docker-compose -f src/main/docker/cassandra.yml up`
+
+sau khi jhipster tạo ứng dụng + Cassandra:
+
+![Result](assert/image.png)
+
+migrate thành công:
+
+![Result](assert/migrate.png)
