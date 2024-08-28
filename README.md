@@ -291,3 +291,14 @@ hoặc có thể chỉnh sửa file: *~/.docker/machine/machines/default/config.
  
 ### 2.3 Configuring IDE
 
+Một dự án JHipster có thể được phát triển mà không cần bất kì IDE nào. Bạn chỉ cần một trình chỉnh sửa đơn giản và command line. Trên thực tế, ta cần sử dụng một IDE hoặc một trình soạn thảo nâng cao hơn. Sau đây là một số cách cài đặt:
+
+-Cấu hình Eclipse với Maven: https://www.jhipster.tech/configuring-ide-eclipse/
+
+-Cấu hình Eclipse với Gradle: https://www.jhipster.tech/configuring-ide-eclipse-gradle/
+
+-Cấu hình Intellij IDEA: https://www.jhipster.tech/configuring-ide-idea/
+
+-Cấu hình VSCode:https://www.jhipster.tech/configuring-ide-visual-studio-code/
+
+-Cấu hình Netbean:https://www.jhipster.tech/configuring-ide-netbeans/
