@@ -310,5 +310,5 @@ Một dự án JHipster có thể được phát triển mà không cần bất 
 
                 `docker --veriosn`
 - Khởi chạy dự án với JHipster:
-![Description](assets/generateApp.png)
+![Description](assert/generateApp.png)
 
