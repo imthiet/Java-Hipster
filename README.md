@@ -323,3 +323,13 @@ sau khi jhipster tạo ứng dụng + Cassandra:
 migrate thành công:
 
 ![Result](assert/migrate.png)
+
+Run ứng dụng thành công, cổng 8080:
+
+![Result](assert/port_sc.png)
+
+Giao diện trên localhost:8080:
+ảnh local
+
+### đã khởi chạy thành công! ###
+
