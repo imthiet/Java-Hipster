@@ -326,7 +326,7 @@ migrate thành công:
 
 Run ứng dụng thành công, cổng 8080:
 
-![Result](assert/port_sc.png)
+![Result](assert/image.png)
 
 Giao diện trên localhost:8080:
 ảnh local
