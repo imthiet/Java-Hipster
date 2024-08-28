@@ -11,6 +11,10 @@
 ### 2.Cài Đặt Môi Trường
 - [2.1 Cài Đặt JHipster](#21-jhipster-installation)
 - [2.2 Cấu Hình Proxy](#22-configuring-proxy)
+- [2.3 Cấu Hình IDE](#23-configuring-ide)
+- [2.4 Docker Compose](#24-docker-compose)
+- [2.5 Shell Plugin](#22-configuring-proxy)
+
 
 
 
@@ -285,4 +289,5 @@ Native Docker:
     default`
 hoặc có thể chỉnh sửa file: *~/.docker/machine/machines/default/config.json.*
  
-    
+### 2.3 Configuring IDE
+
