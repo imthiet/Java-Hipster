@@ -302,3 +302,13 @@ Một dự án JHipster có thể được phát triển mà không cần bất 
 -Cấu hình VSCode:https://www.jhipster.tech/configuring-ide-visual-studio-code/
 
 -Cấu hình Netbean:https://www.jhipster.tech/configuring-ide-netbeans/
+
+
+### 2.4 Docker Compose
+
+ - Kiểm tra xem docker đã cài đặt hay chưa:
+
+                `docker --veriosn`
+- Khởi chạy dự án với JHipster:
+![Description](assets/generateApp.png)
+
