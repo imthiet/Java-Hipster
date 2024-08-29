@@ -284,7 +284,7 @@ Khởi chạy thành công:
 ![Result](assert/connect.png)
 Truy cập `localhost:8080` và kết quả:
 ![Image](assert/locahost.png)
-### 3.1 Tạo Thực Thể
+### 3.2 Tạo Thực Thể
 - Tạo thực thể với lệnh `jhipster entity + entity_name`:
 
     `jhipster entity bookAuthor`
@@ -316,3 +316,59 @@ Nếu các thực thể đã cập nhật trên src/.../domain nhưng khi chạy
 Kết quả trên local:
 
 ![Result](assert/result_on_local_2.png)
+
+### 3.3 Tạo DTO - Data tranfer Objects
+DTO như một trung gian truyền dữ liệu giữa các tầng của ứng dụng để tránh sử dụng trực tiếp các entites và còn giảm tải dữ liệu không cần thiêt.
+
+
+   @Mapper
+    public abstract class CarMapper 
+
+    @Inject
+    private UserRepository userRepository;
+
+    @Mapping(source = "user.id", target = "userId")
+    @Mapping(source = "user.login", target = "userLogin")
+    public abstract CarDTO carToCarDTO(Car car);
+
+    @Mapping(source = "userId", target = "user")
+    public abstract Car carDTOToCar(CarDTO carDTO);
+
+    public User userFromId(Long id) {
+        if (id == null) {
+            return null;
+        }
+        return userRepository.findOne(id);
+    }
+} 
+
+
+
+`@Mapping(source = "user.id", target = "userId")`
+
+chỉ định trường id của user sẽ được ánh xạ vào trường userID của userDTO, tương tự với login -> userLogin
+
+`@Mapping(source = "user.login", target = "userLogin")`
+
+`public abstract CarDTO carToCarDTO(Car car);`
+
+Mapstruct sẽ tự động triển khai để chuyển đổi 1 đối tượng "carDTO" thành "Car"
+### 3.4 Quản Lý Quan Hệ
+
+Với JPA các quan hệ one-to-many, many-to-one,many-to-many và one-to-one đều khả dụng.
+
+- One to many (một người sở hữu nhiều xe):
+
+    `owner (1) <----> (*) Car`
+
+command line jhipster enity + entity_name    :
+
+tạo entity owner:
+
+![Result](assert/entity_owner.png)
+
+tạo entity car thuộc tính quan hệ tới owner:
+
+![Result](assert/entity_car.png)
+
+![Result](assert/entity_car_2.png)
