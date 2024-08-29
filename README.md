@@ -13,7 +13,14 @@
 - [2.2 Cấu Hình Proxy](#22-configuring-proxy)
 - [2.3 Cấu Hình IDE](#23-configuring-ide)
 - [2.4 Docker Compose](#24-docker-compose)
-- [2.5 Shell Plugin](#22-configuring-proxy)
+### 3.Task chính của JHipster
+- [3.1 Tạo Ứng Dụng](#31-tao-ung-dung)
+- [2.2 Cấu Hình Proxy](#22-configuring-proxy)
+- [2.3 Cấu Hình IDE](#23-configuring-ide)
+- [2.4 Docker Compose](#24-docker-compose)
+- [2.1 Cài Đặt JHipster](#21-jhipster-installation)
+- [2.2 Cấu Hình Proxy](#22-configuring-proxy)
+
 
 
 
@@ -248,3 +255,30 @@ Giao diện trên localhost:8080:
 
 ### đã khởi chạy thành công! ###
 
+# 3.Các task chính của JHipster
+### 3.1 Tạo Ứng Dụng
+- Khởi tạo thư mục -> chuyển đến thư mục -> dùng lệnh jhipster để khởi tạo ứng dụng trong thư mục.
+
+![Result](assert/create_new_app.png)
+
+- Lựa chọn cấu hình cho ứng dụng:
+![Result](assert/answer.png)
+
+BaseName, Loại ứng dụng muốn cài đặt: Monolithic, Microservices,...
+Default Java packagename, Maven or Gradle for backend,...
+Sau khi cấu hình xong sẽ mất vài phút để jhipster run và có thông báo thành công:
+
+![Result](assert/after_run.png)
+Sau khi tạo ứng dụng thành công, có thể dùng một IDE để import và run với mvnw. Hoặc mở một terminal khác để chạy lệnh mvnw
+Như trên thông báo thì ta cần chạy cả lệnh `npm start` để khởi động Angular hoặc bất kì frontend nào khác như react,...
+
+![Khoi Chay FrontEnd Thanh Cong](assert/npm_start_scc.png)
+
+Khởi chạy thành công ứng dụng vừa cấu hình với cổng 8080. Tuy Cập
+Localhost:8080 để truy cập ứng dụng.(Lưu ý trong trường hợp cấu hình với Database là SQl thì cần config lại file src/main/resources/config/application-dev.yml cho đúng với db mình muốn connect)
+
+![Result](assert/configdb.png)
+
+Khởi chạy thành công:
+![Result](assert/mvnw.png)
+![Result](assert/connect.png)
