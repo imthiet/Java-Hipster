@@ -280,10 +280,15 @@ Localhost:8080 để truy cập ứng dụng.(Lưu ý trong trường hợp cấ
 ![Result](assert/configdb.png)
 
 Khởi chạy thành công:
+
 ![Result](assert/mvnw.png)
+
 ![Result](assert/connect.png)
+
 Truy cập `localhost:8080` và kết quả:
+
 ![Image](assert/locahost.png)
+
 ### 3.1 Tạo Thực Thể
 - Tạo thực thể với lệnh `jhipster entity + entity_name`:
 
@@ -292,10 +297,15 @@ Truy cập `localhost:8080` và kết quả:
 thuộc tính và type của thuộc tính:
 
 ![Result](assert/entity_create_1.png)
+
 quan hệ giữa 2 thực thể:
+
 ![Result](assert/entity_create_3.png)
+
 sau khi tạo, kiểm tra các thực thể trong src/main/java/com...domain và nếu sử dụng mysql hoặc h2,... kiểm tra trong db xem thực thể đã được cập nhật hay chưa.
-Kết quả trên localhost:8080 sau khi run lại ứng dụng:
+Kết quả trên localhost:8080 sau khi run lại ứng dụng: 
+
 ![Result](assert/result_on_local_1.png)
+
 trong phần thực thể(Entities) có thể thấy 2 thực thể vừa tạo và trang CRUD cho 2 thực thể đó.
 - Tạo Thực Thể 
