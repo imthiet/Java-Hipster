@@ -17,9 +17,9 @@
 - [3.1 Tạo Ứng Dụng](#31-tao-ung-dung)
 - [3.2 Tạo Thực Thể](#32-tao-thuc-the)
 - [3.3 Tạo Data Tranfer Objects](#33-tao-dto)
-- [2.4 Docker Compose](#24-docker-compose)
-- [2.1 Cài Đặt JHipster](#21-jhipster-installation)
-- [2.2 Cấu Hình Proxy](#22-configuring-proxy)
+- [3.4 Quản Lý Quan Hệ](#34-relationship)
+- [3.5 Internationalization](#35-internationalization)
+- [3.6 Cập Nhật Ứng Dụng](#36-cap-nhat-ung dung)
 
 
 
