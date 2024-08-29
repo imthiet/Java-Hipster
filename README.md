@@ -19,7 +19,7 @@
 - [3.3 Tạo Data Tranfer Objects](#33-tao-dto)
 - [3.4 Quản Lý Quan Hệ](#34-relationship)
 - [3.5 Internationalization](#35-internationalization)
-- [3.6 Cập Nhật Ứng Dụng](#36-cap-nhat-ung dung)
+- [3.6 Cập Nhật Ứng Dụng](#36-cap_nhat_ung_dung)
 
 
 
