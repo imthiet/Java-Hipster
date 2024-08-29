@@ -372,3 +372,25 @@ command line jhipster enity + entity_name    :
 ![Result](assert/entity_car.png)
 
 ![Result](assert/entity_car_2.png)
+
+
+- Two one to many:
+
+![Result](assert/chup.png)
+
+sau khi chạy thành công:
+
+![Result](assert/ss_entity.png)
+
+Biểu diễn trong JDL Studio:
+
+![Result](assert/jdl_studio_2.png)
+
+Tương tự với one-to-one và many-to-many
+
+- Mối quan hệ một-một đơn chiều(A unidirectional one-to-one relationship):
+
+mô tả: `Citizen (1) -----> (1) Passport`
+
+
+![Result](assert/one_un.png)
