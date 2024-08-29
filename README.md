@@ -363,11 +363,11 @@ Với JPA các quan hệ one-to-many, many-to-one,many-to-many và one-to-one đ
 
 command line jhipster enity + entity_name    :
 
-tạo entity owner:
+###  tạo entity owner: ###
 
 ![Result](assert/entity_owner.png)
 
-tạo entity car thuộc tính quan hệ tới owner:
+### tạo entity car thuộc tính quan hệ tới owner: ###
 
 ![Result](assert/entity_car.png)
 
